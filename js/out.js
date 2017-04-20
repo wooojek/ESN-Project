@@ -9598,17 +9598,21 @@ var Profile = function (_React$Component) {
             } else if (this.state.submit === 'Zatwierdź') {}
 
             return _react2.default.createElement(
-                'form',
-                { onSubmit: function onSubmit(event) {
-                        return _this2.handleEdit(event);
-                    } },
-                _react2.default.createElement('input', _extends({ type: 'text', name: 'imageSrc', value: this.state.imageSrc, onChange: this.handleChange, className: 'display' }, opts)),
-                _react2.default.createElement('img', { src: this.state.imageSrc }),
-                _react2.default.createElement('input', _extends({ type: 'text', name: 'firstName', value: this.state.firstName, onChange: this.handleChange }, opts)),
-                _react2.default.createElement('input', _extends({ type: 'text', name: 'lastName', value: this.state.lastName, onChange: this.handleChange }, opts)),
-                _react2.default.createElement('input', _extends({ type: 'text', name: 'proffesion', value: this.state.proffesion, onChange: this.handleChange }, opts)),
-                _react2.default.createElement('input', _extends({ type: 'text', name: 'description', value: this.state.description, onChange: this.handleChange }, opts)),
-                _react2.default.createElement('input', { type: 'submit', value: this.state.submit })
+                'div',
+                { id: 'profile' },
+                _react2.default.createElement(
+                    'form',
+                    { onSubmit: function onSubmit(event) {
+                            return _this2.handleEdit(event);
+                        } },
+                    _react2.default.createElement('input', _extends({ type: 'text', name: 'imageSrc', value: this.state.imageSrc, onChange: this.handleChange, className: 'display' }, opts)),
+                    _react2.default.createElement('img', { src: this.state.imageSrc }),
+                    _react2.default.createElement('input', _extends({ type: 'text', name: 'firstName', value: this.state.firstName, onChange: this.handleChange }, opts)),
+                    _react2.default.createElement('input', _extends({ type: 'text', name: 'lastName', value: this.state.lastName, onChange: this.handleChange }, opts)),
+                    _react2.default.createElement('input', _extends({ type: 'text', name: 'proffesion', value: this.state.proffesion, onChange: this.handleChange }, opts)),
+                    _react2.default.createElement('input', _extends({ type: 'text', name: 'description', value: this.state.description, onChange: this.handleChange }, opts)),
+                    _react2.default.createElement('input', { type: 'submit', value: this.state.submit })
+                )
             );
         }
     }]);
@@ -9670,7 +9674,11 @@ document.addEventListener('DOMContentLoaded', function () {
         _createClass(App, [{
             key: 'render',
             value: function render() {
-                return _react2.default.createElement(_profile2.default, null);
+                return _react2.default.createElement(
+                    'div',
+                    { id: 'container' },
+                    _react2.default.createElement(_profile2.default, null)
+                );
             }
         }]);
 

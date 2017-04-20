@@ -54,15 +54,17 @@ class Profile extends React.Component {
 
         }
 
-        return <form onSubmit={event => this.handleEdit(event)}>
-                <input type='text' name='imageSrc' value={this.state.imageSrc} onChange={this.handleChange} className="display" {...opts}/>
-                <img src={this.state.imageSrc}/>
-                <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}{...opts}/>
-                <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange} {...opts}/>
-                <input type='text' name='proffesion' value={this.state.proffesion} onChange={this.handleChange} {...opts}/>
-                <input type='text' name='description' value={this.state.description} onChange={this.handleChange} {...opts}/>
-                <input type='submit' value={this.state.submit}/>
-            </form>;
+        return <div id="profile">
+                <form onSubmit={event => this.handleEdit(event)}>
+                    <input type='text' name='imageSrc' value={this.state.imageSrc} onChange={this.handleChange} className="display" {...opts}/>
+                    <img src={this.state.imageSrc}/>
+                    <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}{...opts}/>
+                    <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange} {...opts}/>
+                    <input type='text' name='proffesion' value={this.state.proffesion} onChange={this.handleChange} {...opts}/>
+                    <input type='text' name='description' value={this.state.description} onChange={this.handleChange} {...opts}/>
+                    <input type='submit' value={this.state.submit}/>
+                </form>
+            </div>;
     }
 }
 

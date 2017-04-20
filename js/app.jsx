@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     class App extends React.Component {
         render() {
-            return <Profile />;
+            return <div id="container">
+                <Profile />
+                </div>;
         }
     }
 
