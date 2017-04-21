@@ -11,7 +11,7 @@ class Profile extends React.Component {
             proffesion: 'CEO',
             description: 'lorem ipsum dolor',
             submit: 'Edytuj',
-            display: false,
+            display: true,
         }
     }
 

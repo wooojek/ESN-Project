@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from './menu.jsx';
+import BurgerMenu from './burgerMenu.jsx';
 // import Messages from './messages.jsx';
 // import NewsFeed from './newsFeed.jsx';
 // import Groups from './groups.jsx';
@@ -42,7 +42,7 @@ class BurgerButton extends React.Component {
                 {/*based on: http://callmenick.com/post/animating-css-only-hamburger-menu-icons*/}
                     <span></span>
                 </button>
-                {this.state.display ? <Menu /> : null}
+                {this.state.display ? <BurgerMenu /> : null}
             </div>
     }
 }
