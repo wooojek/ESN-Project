@@ -1,3 +1,96 @@
 .display {
     display: none;
 }
+
+#navigation {
+    .c-hamburger {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 96px;
+        height: 96px;
+        font-size: 0;
+        text-indent: -9999px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+        
+        span {
+            display: block;
+            position: absolute;
+            top: 44px;
+            left: 18px;
+            right: 18px;
+            height: 8px;
+            background: white;
+        }
+
+        span::before,
+        span::after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: #fff;
+            content: "";
+        }
+
+        span::before {
+            top: -20px;
+        }
+
+        span::after {
+            bottom: -20px;
+        }
+    }
+
+    .c-hamburger:focus {
+        outline: none;
+    }
+
+    .c-hamburger--htra {
+        background-color: #ff9650;
+
+        span {
+            transition: transform 0.3s;
+        }
+
+        span::before {
+            transform-origin: top left;
+            transition: transform 0.3s, width 0.3s, top 0.3s;
+        }
+
+        span::after {
+            transform-origin: bottom left;
+            transition: transform 0.3s, width 0.3s, bottom 0.3s;
+        }
+    }
+    .is-active {
+            background-color: #e95d00;
+
+            span {
+                transform: rotate(180deg);
+            }
+
+            span::before,
+            span::after {
+                width: 50%;
+            }
+
+            span::before {
+                top: 0;
+                transform: translateX(-8px) translateY(4px) rotate(-45deg);
+            }
+
+            span::after {
+                bottom: 0;
+                transform: translateX(-8px) translateY(-4px) rotate(45deg);
+            }
+        }
+}
