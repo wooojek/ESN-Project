@@ -1,3 +1,5 @@
+$mainColor: #e95d00; 
+
 .display {
     display: none;
 }
@@ -72,7 +74,7 @@
         }
     }
     .is-active {
-            background-color: #e95d00;
+            background-color: $mainColor;
 
             span {
                 transform: rotate(180deg);
@@ -93,4 +95,19 @@
                 transform: translateX(-8px) translateY(-4px) rotate(45deg);
             }
         }
+    #burgerMenu {
+        background-color: $mainColor;
+        color: white;
+        text-align: center;
+
+        ul {
+            list-style-type: none;
+
+            li {
+                display: block;
+                height: 40px;
+                line-height: 40px;
+            }
+        }
+    }
 }
