@@ -11,6 +11,7 @@ class Profile extends React.Component {
             proffesion: 'CEO',
             description: 'lorem ipsum dolor',
             submit: 'Edytuj',
+            display: false,
         }
     }
 
@@ -45,6 +46,18 @@ class Profile extends React.Component {
         });
     }
 
+    handleImgClick = (event) => {
+        this.setState({
+            display: !this.state.display,
+        });
+        let form = event.target.parentElement.childNodes[1];
+        if(this.state.display) {
+            form.classList.remove('display');
+        } else {
+            form.classList.add('display');
+        }
+    }
+
     render() {
         let opts = {};
 
@@ -55,9 +68,9 @@ class Profile extends React.Component {
         }
 
         return <div id="profile">
-                <form onSubmit={event => this.handleEdit(event)}>
+                <img src={this.state.imageSrc} onClick={event => this.handleImgClick(event)}/>
+                <form className="profileForm display" onSubmit={event => this.handleEdit(event)}>
                     <input type='text' name='imageSrc' value={this.state.imageSrc} onChange={this.handleChange} className="display" {...opts}/>
-                    <img src={this.state.imageSrc}/>
                     <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}{...opts}/>
                     <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange} {...opts}/>
                     <input type='text' name='proffesion' value={this.state.proffesion} onChange={this.handleChange} {...opts}/>

@@ -9670,13 +9670,26 @@ var Profile = function (_React$Component) {
             _this.setState(_defineProperty({}, name, event.target.value));
         };
 
+        _this.handleImgClick = function (event) {
+            _this.setState({
+                display: !_this.state.display
+            });
+            var form = event.target.parentElement.childNodes[1];
+            if (_this.state.display) {
+                form.classList.remove('display');
+            } else {
+                form.classList.add('display');
+            }
+        };
+
         _this.state = {
             firstName: 'Jan',
             lastName: 'Nowak',
             imageSrc: './img/ic_account_circle_black_48px.svg', //from google material design
             proffesion: 'CEO',
             description: 'lorem ipsum dolor',
-            submit: 'Edytuj'
+            submit: 'Edytuj',
+            display: false
         };
         return _this;
     }
@@ -9695,13 +9708,15 @@ var Profile = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { id: 'profile' },
+                _react2.default.createElement('img', { src: this.state.imageSrc, onClick: function onClick(event) {
+                        return _this2.handleImgClick(event);
+                    } }),
                 _react2.default.createElement(
                     'form',
-                    { onSubmit: function onSubmit(event) {
+                    { className: 'profileForm display', onSubmit: function onSubmit(event) {
                             return _this2.handleEdit(event);
                         } },
                     _react2.default.createElement('input', _extends({ type: 'text', name: 'imageSrc', value: this.state.imageSrc, onChange: this.handleChange, className: 'display' }, opts)),
-                    _react2.default.createElement('img', { src: this.state.imageSrc }),
                     _react2.default.createElement('input', _extends({ type: 'text', name: 'firstName', value: this.state.firstName, onChange: this.handleChange }, opts)),
                     _react2.default.createElement('input', _extends({ type: 'text', name: 'lastName', value: this.state.lastName, onChange: this.handleChange }, opts)),
                     _react2.default.createElement('input', _extends({ type: 'text', name: 'proffesion', value: this.state.proffesion, onChange: this.handleChange }, opts)),
