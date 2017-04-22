@@ -2,6 +2,7 @@ import React from 'react';
 import { Router,
     Route,
     Link,
+    IndexLink,
     IndexRoute,
     hashHistory } from 'react-router';
 
@@ -30,12 +31,14 @@ class Template extends React.Component {
                     </div>
                     <div id="leftComponents">
                         <Profile />
-                        <Link to='/profile'>Profil</Link>
-                        <Link to='/messages'>Wiadomości</Link>
-                        <Link to='/newsfeed'>Aktualności</Link>
-                        <Link to='/groups'>Grupy</Link>
-                        <Link to='/knowledgebase'>Baza wiedzy</Link>
-                        <Link to='/sites'>Strony</Link>
+                        <ul>
+                            <li><IndexLink to='/profile'>Profil</IndexLink></li>
+                            <li><IndexLink to='/messages'>Wiadomości</IndexLink></li>
+                            <li><IndexLink to='/newsfeed'>Aktualności</IndexLink></li>
+                            <li><IndexLink to='/groups'>Grupy</IndexLink></li>
+                            <li><IndexLink to='/knowledgebase'>Baza wiedzy</IndexLink></li>
+                            <li><IndexLink to='/sites'>Strony</IndexLink></li>
+                        </ul>
                     </div>
                     <section id="activeContent">
                         {this.props.children}
