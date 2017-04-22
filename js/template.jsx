@@ -1,16 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Router,
     Route,
     Link,
     IndexRoute,
     hashHistory } from 'react-router';
 
-import Template from './template.jsx';
-
 import Profile from './profile.jsx';
 import SearchBar from './searchBar.jsx';
 import BurgerButton from './burgerButton.jsx';
+
 import Menu from './menu.jsx';
 import Messages from './messages.jsx';
 import NewsFeed from './newsFeed.jsx';
@@ -22,24 +20,9 @@ import Files from './files.jsx';
 import Sharing from './sharing.jsx';
 import NotFound from './notFound.jsx';
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    class App extends React.Component {
+class Template extends React.Component {
         render() {
-            return <Router history={hashHistory}>
-                    <Route path='/' component={Template}>
-                    <IndexRoute component={NewsFeed} />
-                    <Route path='/profile' component={Profile} />
-                    <Route path='/messages' component={Messages} />
-                    <Route path='/newsfeed' component={NewsFeed} />
-                    <Route path='/groups' component={Groups} />
-                    <Route path='/knowledgebase' component={KnowledgeBase} />
-                    <Route path='/sites' component={Sites} />
-                    <Route path='*' component={NotFound} />
-                    </Route>
-                </Router>
-
-            {/*return <div id="container">
+            return <div id="container">
                     <div id="navigation">
                         <Profile />
                         <SearchBar />
@@ -47,22 +30,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     <div id="leftComponents">
                         <Profile />
-                        <Menu />
+                        <Link to='/profile'>Profil</Link>
+                        <Link to='/messages'>Wiadomości</Link>
+                        <Link to='/newsfeed'>Aktualności</Link>
+                        <Link to='/groups'>Grupy</Link>
+                        <Link to='/knowledgebase'>Baza wiedzy</Link>
+                        <Link to='/sites'>Strony</Link>
                     </div>
                     <section id="activeContent">
+                        {this.props.children}
                     </section>
                     <div id="rightComponents" style={{float: "right"}}>
                         <ToDoList />
                         <Files />
                         <Sharing />
                     </div>
-                </div>;*/}
+                </div>;
         }
     }
 
-    ReactDOM.render(
-        <App />,
-        document.getElementById('app')
-    );
-
-});
+    export default Template;
