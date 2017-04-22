@@ -41,25 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     <Route path='*' component={NotFound} />
                     </Route>
                 </Router>
-
-            {/*return <div id="container">
-                    <div id="navigation">
-                        <Profile />
-                        <SearchBar />
-                        <BurgerButton />
-                    </div>
-                    <div id="leftComponents">
-                        <Profile />
-                        <Menu />
-                    </div>
-                    <section id="activeContent">
-                    </section>
-                    <div id="rightComponents" style={{float: "right"}}>
-                        <ToDoList />
-                        <Files />
-                        <Sharing />
-                    </div>
-                </div>;*/}
         }
     }
 

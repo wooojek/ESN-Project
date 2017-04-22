@@ -9,12 +9,11 @@ class Sites extends React.Component {
         this.state = {
             sitesListData: data.sites,
         }
-        console.log(this.state.sitesListData);
     }
 
     handleTheData = () => {
         const sitesList = this.state.sitesListData.map((element, index) => {
-            return <li><a href={element.url}>{element.name}</a><p>{element.about}</p></li>;
+            return <li key={element._id}><a href={element.url}>{element.name}</a><p>{element.about}</p></li>;
         });
         return sitesList;
     }
