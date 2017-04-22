@@ -1,25 +1,19 @@
 import React from 'react';
-import Messages from './messages.jsx';
-import NewsFeed from './newsFeed.jsx';
-import Groups from './groups.jsx';
-import KnowledgeBase from './knowledgeBase.jsx';
-import Sites from './sites.jsx';
-import ToDoList from './toDoList.jsx';
-import Files from './files.jsx';
-import Sharing from './sharing.jsx';
+import {IndexLink,} from 'react-router';
 
 class BurgerMenu extends React.Component {
     render () {
     return <div id="burgerMenu">
             <ul>
-                <li><Messages /></li>
-                <li><NewsFeed /></li>
-                <li><Groups /></li>
-                <li><KnowledgeBase /></li>
-                <li><Sites /></li>
-                <li><ToDoList /></li>
-                <li><Files /></li>
-                <li><Sharing /></li>
+                <li><IndexLink to='/profile'>Profil</IndexLink></li>
+                <li><IndexLink to='/newsfeed'>Aktualności</IndexLink></li>
+                <li><IndexLink to='/messages'>Wiadomości</IndexLink></li>
+                <li><IndexLink to='/groups'>Grupy</IndexLink></li>
+                <li><IndexLink to='/knowledgebase'>Baza wiedzy</IndexLink></li>
+                <li><IndexLink to='/sites'>Strony</IndexLink></li>
+                <li><IndexLink to='/todolist'>To Do list</IndexLink></li>
+                <li><IndexLink to='/files'>Pliki</IndexLink></li>
+                <li><IndexLink to='/sharing'>Sharing</IndexLink></li>
             </ul>
         </div>
     }

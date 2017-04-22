@@ -1,10 +1,5 @@
 import React from 'react';
-import { Router,
-    Route,
-    Link,
-    IndexLink,
-    IndexRoute,
-    hashHistory } from 'react-router';
+import {IndexLink,} from 'react-router';
 
 import Profile from './profile.jsx';
 import SearchBar from './searchBar.jsx';
@@ -16,9 +11,11 @@ import NewsFeed from './newsFeed.jsx';
 import Groups from './groups.jsx';
 import KnowledgeBase from './knowledgeBase.jsx';
 import Sites from './sites.jsx';
+
 import ToDoList from './toDoList.jsx';
 import Files from './files.jsx';
 import Sharing from './sharing.jsx';
+
 import NotFound from './notFound.jsx';
 
 class Template extends React.Component {
@@ -33,8 +30,8 @@ class Template extends React.Component {
                         <Profile />
                         <ul>
                             <li><IndexLink to='/profile'>Profil</IndexLink></li>
-                            <li><IndexLink to='/messages'>Wiadomości</IndexLink></li>
                             <li><IndexLink to='/newsfeed'>Aktualności</IndexLink></li>
+                            <li><IndexLink to='/messages'>Wiadomości</IndexLink></li>
                             <li><IndexLink to='/groups'>Grupy</IndexLink></li>
                             <li><IndexLink to='/knowledgebase'>Baza wiedzy</IndexLink></li>
                             <li><IndexLink to='/sites'>Strony</IndexLink></li>

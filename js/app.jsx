@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <Route path='/groups' component={Groups} />
                     <Route path='/knowledgebase' component={KnowledgeBase} />
                     <Route path='/sites' component={Sites} />
+                    <Route path='/todolist' component={ToDoList} />
+                    <Route path='/files' component={Files} />
+                    <Route path='/sharing' component={Sharing} />
                     <Route path='*' component={NotFound} />
                     </Route>
                 </Router>
