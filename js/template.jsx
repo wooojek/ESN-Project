@@ -20,31 +20,33 @@ import NotFound from './notFound.jsx';
 
 class Template extends React.Component {
         render() {
-            return <div id="container">
-                    <div id="navigation">
-                        <Profile />
-                        <SearchBar />
-                        <BurgerButton />
+            return <div className="container">
+                    <div id="navigation" className="row col-12">
+                        <Profile className="col-4"/>
+                        <SearchBar className="col-4"/>
+                        <BurgerButton className="col-4"/>
                     </div>
-                    <div id="leftComponents">
-                        <Profile />
-                        <ul>
-                            <li><IndexLink to='/profile'>Profil</IndexLink></li>
-                            <li><IndexLink to='/newsfeed'>Aktualności</IndexLink></li>
-                            <li><IndexLink to='/messages'>Wiadomości</IndexLink></li>
-                            <li><IndexLink to='/groups'>Grupy</IndexLink></li>
-                            <li><IndexLink to='/knowledgebase'>Baza wiedzy</IndexLink></li>
-                            <li><IndexLink to='/sites'>Strony</IndexLink></li>
-                        </ul>
-                    </div>
-                    <section id="activeContent">
-                        {this.props.children}
+                    <section className="row">
+                        <div id="leftComponents" className="col-2">
+                            <Profile className="row"/>
+                            <ul className="row">
+                                <li><IndexLink to='/profile'>Profil</IndexLink></li>
+                                <li><IndexLink to='/newsfeed'>Aktualności</IndexLink></li>
+                                <li><IndexLink to='/messages'>Wiadomości</IndexLink></li>
+                                <li><IndexLink to='/groups'>Grupy</IndexLink></li>
+                                <li><IndexLink to='/knowledgebase'>Baza wiedzy</IndexLink></li>
+                                <li><IndexLink to='/sites'>Strony</IndexLink></li>
+                            </ul>
+                        </div>
+                        <section id="activeContent" className="col-7">
+                            {this.props.children}
+                        </section>
+                        <div id="rightComponents" className="col-3">
+                            <ToDoList className="row"/>
+                            <Files className="row"/>
+                            <Sharing className="row"/>
+                        </div>
                     </section>
-                    <div id="rightComponents" style={{float: "right"}}>
-                        <ToDoList />
-                        <Files />
-                        <Sharing />
-                    </div>
                 </div>;
         }
     }
