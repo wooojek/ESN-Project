@@ -4,6 +4,59 @@ $mainColor: #e95d00;
     display: none;
 }
 
+$column: 12;
+$site-width: 1200px;
+$gutter: 10px;
+$tablet-breakpoint: 768px;
+$tablet-up: "only screen and (min-width: 768px)";
+
+@mixin clear {
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: $site-width;
+    margin: 0 auto;
+
+    .row {
+        margin: 10px 0;
+
+        @include clear();
+
+        [class*="col-"] {
+
+            float: left;
+            min-height: 2px;
+            width: 100%;
+            padding: 0 $gutter;
+        }
+
+        @for $i from 1 through $column {
+            .col-#{$i} {
+                @media #{$tablet-up} {
+                    width: (100%/$column)*$i;
+
+                }
+
+            }
+        }
+    }
+    .clearfix {
+        @include clear();
+    }
+}
+
 #navigation {
 
     background-color: purple;
