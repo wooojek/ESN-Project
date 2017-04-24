@@ -7,7 +7,7 @@ class Profile extends React.Component {
         this.state = {
             firstName: 'Jan',
             lastName: 'Nowak',
-            imageSrc: './img/ic_account_circle_black_48px.svg',          //from google material design
+            imageSrc: './img/ic_account_circle_black_48px.svg',
             proffesion: 'CEO',
             description: 'lorem ipsum dolor',
             submit: 'Edytuj',
