@@ -1,7 +1,7 @@
 const newsData = {
     news: [
   {
-    "greeting": "Hello, Daugherty! You have 7 unread messages.",
+    "greeting": "Hello, Daugherty!",
     "tags": [
       "cillum",
       "est",
@@ -24,7 +24,7 @@ const newsData = {
     "_id": "58fd058259215b8c18e56130"
   },
   {
-    "greeting": "Hello, Randolph! You have 5 unread messages.",
+    "greeting": "Hello, Randolph!",
     "tags": [
       "pariatur",
       "dolor",
@@ -47,7 +47,7 @@ const newsData = {
     "_id": "58fd0582d05250945c0469ed"
   },
   {
-    "greeting": "Hello, Henry! You have 5 unread messages.",
+    "greeting": "Hello, Henry!",
     "tags": [
       "eu",
       "sunt",
@@ -70,7 +70,7 @@ const newsData = {
     "_id": "58fd058286d96881895d3752"
   },
   {
-    "greeting": "Hello, Lowe! You have 7 unread messages.",
+    "greeting": "Hello, Lowe!",
     "tags": [
       "reprehenderit",
       "irure",
@@ -93,7 +93,7 @@ const newsData = {
     "_id": "58fd058290ca43ec8d53a092"
   },
   {
-    "greeting": "Hello, Kathrine! You have 5 unread messages.",
+    "greeting": "Hello, Kathrine!",
     "tags": [
       "consectetur",
       "cillum",
@@ -116,7 +116,7 @@ const newsData = {
     "_id": "58fd0583496feb64d03f1f1d"
   },
   {
-    "greeting": "Hello, Jayne! You have 7 unread messages.",
+    "greeting": "Hello, Jayne!",
     "tags": [
       "non",
       "elit",
@@ -139,7 +139,7 @@ const newsData = {
     "_id": "58fd0583fe185f035a759df3"
   },
   {
-    "greeting": "Hello, Susan! You have 10 unread messages.",
+    "greeting": "Hello, Susan!",
     "tags": [
       "consequat",
       "laboris",

@@ -19,7 +19,6 @@ import KnowledgeBase from './knowledgeBase.jsx';
 import Sites from './sites.jsx';
 import ToDoList from './toDoList.jsx';
 import Files from './files.jsx';
-import Sharing from './sharing.jsx';
 import NotFound from './notFound.jsx';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     <Route path='/sites' component={Sites} />
                     <Route path='/todolist' component={ToDoList} />
                     <Route path='/files' component={Files} />
-                    <Route path='/sharing' component={Sharing} />
                     <Route path='*' component={NotFound} />
                     </Route>
                 </Router>

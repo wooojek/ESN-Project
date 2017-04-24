@@ -1,5 +1,7 @@
 import React from 'react';
 
+import profileData from './data/profile.js';
+
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -46,18 +48,6 @@ class Profile extends React.Component {
         });
     }
 
-    handleImgClick = (event) => {
-        this.setState({
-            display: !this.state.display,
-        });
-        let form = event.target.parentElement.childNodes[1];
-        if(this.state.display) {
-            form.classList.remove('display');
-        } else {
-            form.classList.add('display');
-        }
-    }
-
     render() {
         let opts = {};
 
@@ -68,8 +58,8 @@ class Profile extends React.Component {
         }
 
         return <div id="profile">
-                <img src={this.state.imageSrc} onClick={event => this.handleImgClick(event)}/>
-                <form className="profileForm display" onSubmit={event => this.handleEdit(event)}>
+                <img src={this.state.imageSrc}/>
+                <form className="profileForm" onSubmit={event => this.handleEdit(event)}>
                     <input type='text' name='imageSrc' value={this.state.imageSrc} onChange={this.handleChange} className="display" {...opts}/>
                     <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}{...opts}/>
                     <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange} {...opts}/>

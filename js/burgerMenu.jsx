@@ -13,7 +13,6 @@ class BurgerMenu extends React.Component {
                 <li><IndexLink to='/sites'>Strony</IndexLink></li>
                 <li><IndexLink to='/todolist'>To Do list</IndexLink></li>
                 <li><IndexLink to='/files'>Pliki</IndexLink></li>
-                <li><IndexLink to='/sharing'>Sharing</IndexLink></li>
             </ul>
         </div>
     }

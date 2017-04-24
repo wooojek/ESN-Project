@@ -7,7 +7,6 @@ import BurgerMenu from './burgerMenu.jsx';
 // import Sites from './sites.jsx';
 // import ToDoList from './toDoList.jsx';
 // import Files from './files.jsx';
-// import Sharing from './sharing.jsx';
 
 
 class BurgerButton extends React.Component {
