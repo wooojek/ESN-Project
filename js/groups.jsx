@@ -1,8 +1,58 @@
 import React from 'react';
+import groupsData from './data/groups.js'
+
+class GroupElement extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: this.props.elementData,
+        }
+    }
+
+    render() {
+        const members = this.state.data.friends.map(item => {
+            return <li key={item.id}>
+                    {item.name}
+                </li>;
+        });
+        return <li key={this.state.data._id}>
+            <div>
+                <h3>{this.state.data.company}</h3>
+                <div>
+                    <p>{this.state.data.about}</p>
+                    <ul>{members}</ul>
+                </div>
+            </div>
+        </li>;
+    }
+}
 
 class Groups extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: [],
+        }
+    }
+
+    componentDidMount() {
+        this.setState({
+            data: groupsData.data,
+        });
+    }
+
     render() {
-        return <div id='groups'>Groups</div>;
+        const elements = this.state.data.map(element => {
+            return <GroupElement elementData={element} />;
+        });
+        return <div id='groups'>
+            <h2>Groups</h2>
+            <ul>
+                {elements}
+            </ul>
+        </div>;
     }
 }
 
