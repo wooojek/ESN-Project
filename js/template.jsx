@@ -18,8 +18,38 @@ import Sharing from './sharing.jsx';
 
 import NotFound from './notFound.jsx';
 
+import * as firebase from 'firebase';
+
+const config = {
+    apiKey: "AIzaSyCY4e40sSMHKqeMWVaj37p8DNoMef_DBIs",
+    authDomain: "react-esn-project.firebaseapp.com",
+    databaseURL: "https://react-esn-project.firebaseio.com",
+    projectId: "react-esn-project",
+    storageBucket: "react-esn-project.appspot.com",
+    messagingSenderId: "818544713250"
+  };
+  firebase.initializeApp(config);
+
 class Template extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: [],
+        }
+    }
+
+    componentDidMount() {
+        const db = firebase.database();
+        const dbRef = db.ref().child('data');
+        dbRef.on('value', snapshot => {
+            this.setState({
+                data: snapshot.val(),
+            });
+        });
+    }
         render() {
+            console.log(this.state.data)
             return <div className="container">
                     <div id="navigation" className="row col-12">
                         <Profile className="col-4"/>
