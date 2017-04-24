@@ -1,4 +1,4 @@
-$mainColor: #e95d00; 
+$mainColor: #FFA726; 
 
 .display {
     display: none;
@@ -21,7 +21,11 @@ $tablet-up: "only screen and (min-width: 768px)";
 }
 
 * {
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    ul {
+        list-style: none;
+    }
 }
 
 .container {
@@ -55,11 +59,17 @@ $tablet-up: "only screen and (min-width: 768px)";
     .clearfix {
         @include clear();
     }
+
+    .hide {
+        @media #{$tablet-up} {
+            display: none;
+        }
+    }
 }
 
 #navigation {
 
-    background-color: purple;
+    background-color: $mainColor;
 
     .c-hamburger {
         display: block;
@@ -112,7 +122,7 @@ $tablet-up: "only screen and (min-width: 768px)";
     }
 
     .c-hamburger--htra {
-        background-color: #ff9650;
+        background-color: $mainColor;
 
         span {
             transition: transform 0.3s;
@@ -128,45 +138,8 @@ $tablet-up: "only screen and (min-width: 768px)";
             transition: transform 0.3s, width 0.3s, bottom 0.3s;
         }
     }
-    .is-active {
-            background-color: $mainColor;
-
-            span {
-                transform: rotate(180deg);
-            }
-
-            span::before,
-            span::after {
-                width: 50%;
-            }
-
-            span::before {
-                top: 0;
-                transform: translateX(-8px) translateY(4px) rotate(-45deg);
-            }
-
-            span::after {
-                bottom: 0;
-                transform: translateX(-8px) translateY(-4px) rotate(45deg);
-            }
-        }
     #burger {
         display: inline-block;
-    }
-    #burgerMenu {
-        background-color: $mainColor;
-        color: white;
-        text-align: center;
-
-        ul {
-            list-style-type: none;
-
-            li {
-                display: block;
-                height: 40px;
-                line-height: 40px;
-            }
-        }
     }
 
     #profile {
@@ -186,5 +159,19 @@ $tablet-up: "only screen and (min-width: 768px)";
     #searchBar {
         display: inline-block;
         width: 60vw;
+    }
+}
+
+#leftComponents {
+    display: none;
+    @media #{$tablet-up} {
+        display: block;
+    }
+}
+
+#rightComponents {
+    display: none;
+    @media #{$tablet-up} {
+        display: block;
     }
 }

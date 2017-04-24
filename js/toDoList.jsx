@@ -114,7 +114,7 @@ class ToDoList extends React.Component {
 
     render() {
         const toDoItems = this.state.items.map(element => {
-            return <ToDoItem itemKey={element._id} itemTitle={element.name} itemState={element.state} onRemove={this.handleItemOnRemove} onUpdate={this.handleUpdateItem}/>;
+            return <ToDoItem key={element._id} itemKey={element._id} itemTitle={element.name} itemState={element.state} onRemove={this.handleItemOnRemove} onUpdate={this.handleUpdateItem}/>;
         });
         return <div id='toDoList'>
             <h2>ToDoList</h2>

@@ -6,6 +6,8 @@ import { Router,
     IndexRoute,
     hashHistory } from 'react-router';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import Template from './template.jsx';
 
 import Profile from './profile.jsx';
@@ -26,21 +28,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     class App extends React.Component {
         render() {
-            return <Router history={hashHistory}>
-                    <Route path='/' component={Template}>
-                    <IndexRoute component={NewsFeed} />
-                    <Route path='/profile' component={Profile} />
-                    <Route path='/menu' component={BurgerMenu} />
-                    <Route path='/messages' component={Messages} />
-                    <Route path='/newsfeed' component={NewsFeed} />
-                    <Route path='/groups' component={Groups} />
-                    <Route path='/knowledgebase' component={KnowledgeBase} />
-                    <Route path='/sites' component={Sites} />
-                    <Route path='/todolist' component={ToDoList} />
-                    <Route path='/files' component={Files} />
-                    <Route path='*' component={NotFound} />
-                    </Route>
-                </Router>
+            return <MuiThemeProvider>
+                    <Router history={hashHistory}>
+                        <Route path='/' component={Template}>
+                        <IndexRoute component={NewsFeed} />
+                        <Route path='/profile' component={Profile} />
+                        <Route path='/menu' component={BurgerMenu} />
+                        <Route path='/messages' component={Messages} />
+                        <Route path='/newsfeed' component={NewsFeed} />
+                        <Route path='/groups' component={Groups} />
+                        <Route path='/knowledgebase' component={KnowledgeBase} />
+                        <Route path='/sites' component={Sites} />
+                        <Route path='/todolist' component={ToDoList} />
+                        <Route path='/files' component={Files} />
+                        <Route path='*' component={NotFound} />
+                        </Route>
+                    </Router>
+                </MuiThemeProvider>
         }
     }
 
