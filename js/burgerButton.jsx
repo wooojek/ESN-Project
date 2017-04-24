@@ -1,4 +1,6 @@
 import React from 'react';
+import {hashHistory} from 'react-router'
+
 import BurgerMenu from './burgerMenu.jsx';
 // import Messages from './messages.jsx';
 // import NewsFeed from './newsFeed.jsx';
@@ -20,19 +22,7 @@ class BurgerButton extends React.Component {
 
     handleBurgerClick = (event) => {
         event.preventDefault();
-        let element;
-
-        if (event.target.id === 'burgerButton') {
-            element = event.target;
-        } else {
-            element = event.target.parentNode;
-        }
-
-        ( element.classList.contains("is-active") === true ) ? element.classList.remove("is-active") : element.classList.add("is-active");
-
-        this.setState({
-            display: !this.state.display,
-        })
+        hashHistory.push('/menu');
     }
 
     render () {
@@ -41,7 +31,6 @@ class BurgerButton extends React.Component {
                 {/*based on: http://callmenick.com/post/animating-css-only-hamburger-menu-icons*/}
                     <span></span>
                 </button>
-                {this.state.display ? <BurgerMenu /> : null}
             </div>
     }
 }

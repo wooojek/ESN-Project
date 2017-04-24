@@ -11,6 +11,7 @@ import Template from './template.jsx';
 import Profile from './profile.jsx';
 import SearchBar from './searchBar.jsx';
 import BurgerButton from './burgerButton.jsx';
+import BurgerMenu from './burgerMenu.jsx';
 import Menu from './menu.jsx';
 import Messages from './messages.jsx';
 import NewsFeed from './newsFeed.jsx';
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <Route path='/' component={Template}>
                     <IndexRoute component={NewsFeed} />
                     <Route path='/profile' component={Profile} />
+                    <Route path='/menu' component={BurgerMenu} />
                     <Route path='/messages' component={Messages} />
                     <Route path='/newsfeed' component={NewsFeed} />
                     <Route path='/groups' component={Groups} />
