@@ -220,6 +220,12 @@ $tablet-down: "only screen and (max-width: 768px)";
     @media #{$tablet-up} {
         display: block;
     }
+    a {
+        img {
+            height: 50px;
+            width: 50px;
+        }
+    }
 }
 
 #activeContent {
