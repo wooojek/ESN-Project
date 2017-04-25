@@ -8,6 +8,8 @@ import { Router,
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+require('../sass/style.scss');
+
 import Template from './template.jsx';
 
 import Profile from './profile.jsx';
