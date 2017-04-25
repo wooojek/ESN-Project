@@ -52,13 +52,13 @@ class Template extends React.Component {
             console.log(this.state.data)
             return <div className="container">
                     <div id="navigation" className="row col-12">
-                        <ProfilePic className="col-4 hide"/>
+                        <ProfilePic id="navProfile" className="col-4 hide"/>
                         <SearchBar className="col-4"/>
                         <BurgerButton className="col-4 hide"/>
                     </div>
                     <section className="row">
                         <div id="leftComponents" className="col-2">
-                            <ProfilePic className="row"/>
+                            <ProfilePic id="profilePic" className="row"/>
                             <ul className="row">
                                 <li><IndexLink to='/newsfeed'>Aktualności</IndexLink></li>
                                 <li><IndexLink to='/messages'>Wiadomości</IndexLink></li>
