@@ -20,7 +20,7 @@ class ProfilePic extends React.Component {
 
     render() {
         return <div>
-                <IndexLink to="/profile" ><img src={this.state.imageSrc.picture}/></IndexLink>
+                <IndexLink to="/profile"><img src={this.state.imageSrc.picture}/></IndexLink>
             </div>;
     }
 }

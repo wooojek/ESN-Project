@@ -5,14 +5,14 @@ class BurgerMenu extends React.Component {
     render () {
     return <div id="burgerMenu">
             <ul>
-                <li><IndexLink to='/profile'>Profil</IndexLink></li>
-                <li><IndexLink to='/newsfeed'>Aktualności</IndexLink></li>
-                <li><IndexLink to='/messages'>Wiadomości</IndexLink></li>
-                <li><IndexLink to='/groups'>Grupy</IndexLink></li>
-                <li><IndexLink to='/knowledgebase'>Baza wiedzy</IndexLink></li>
-                <li><IndexLink to='/sites'>Strony</IndexLink></li>
-                <li><IndexLink to='/todolist'>To Do list</IndexLink></li>
-                <li><IndexLink to='/files'>Pliki</IndexLink></li>
+                <li><div className="burgerClass"><IndexLink to='/profile'>Profil</IndexLink></div></li>
+                <li><div className="burgerClass"><IndexLink to='/newsfeed'>Aktualności</IndexLink></div></li>
+                <li><div className="burgerClass"><IndexLink to='/messages'>Wiadomości</IndexLink></div></li>
+                <li><div className="burgerClass"><IndexLink to='/groups'>Grupy</IndexLink></div></li>
+                <li><div className="burgerClass"><IndexLink to='/knowledgebase'>Baza wiedzy</IndexLink></div></li>
+                <li><div className="burgerClass"><IndexLink to='/sites'>Strony</IndexLink></div></li>
+                <li><div className="burgerClass"><IndexLink to='/todolist'>To Do list</IndexLink></div></li>
+                <li><div className="burgerClass"><IndexLink to='/files'>Pliki</IndexLink></div></li>
             </ul>
         </div>
     }

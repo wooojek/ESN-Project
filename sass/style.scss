@@ -6,9 +6,10 @@ $mainColor: #FFA726;
 
 $column: 12;
 $site-width: 1200px;
-$gutter: 10px;
+$min-site-width: 320px;
 $tablet-breakpoint: 768px;
 $tablet-up: "only screen and (min-width: 768px)";
+$tablet-down: "only screen and (max-width: 768px)";
 
 @mixin clear {
 
@@ -19,26 +20,53 @@ $tablet-up: "only screen and (min-width: 768px)";
         clear: both;
     }
 }
+body {
+    
+}
 
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     ul {
         list-style: none;
+        padding: 0;
     }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+.centered {
+    text-align: center;
 }
 
 .container {
+    position: relative;
     width: 100%;
     max-width: $site-width;
+    min-width: $min-site-width;
     margin: 0 auto;
+
     .hide {
         @media #{$tablet-up} {
             display: none;
         }
     }
+
+    .fixed {
+        @media #{$tablet-down} {
+            margin-top: 96px;
+        }
+        position: fixed;
+        width: 100%;
+        max-width: $site-width;
+        top: 0;
+        margin: 0 auto;
+        margin-top: 30px;
+        z-index: 8;
+    }
+
     .row {
-        margin: 10px 0;
 
         @include clear();
 
@@ -47,7 +75,6 @@ $tablet-up: "only screen and (min-width: 768px)";
             float: left;
             min-height: 2px;
             width: 100%;
-            padding: 0 $gutter;
         }
 
         @for $i from 1 through $column {
@@ -69,13 +96,44 @@ $tablet-up: "only screen and (min-width: 768px)";
             display: none;
         }
     }
+
+    input {
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 15px 0 15px 0;
+        display: inline-block;
+    }
+
+    .profileForm input {
+        display: block;
+        margin: 10px 0;
+    }
+    .profileForm input:first-child {
+        margin: 10px auto;
+    }
+
+    
 }
 
 #navigation {
-
+    width: 100%;
+    height: 96px;
     background-color: $mainColor;
+    max-width: $site-width;
+    position: fixed;
+    top: 0;
+    z-index: 10000000000000;
+    margin: 0 auto;
+
+    div {
+        display: inline-block;
+    }
 
     .c-hamburger {
+        @media #{$tablet-up} {
+            display: none;
+        }
         display: block;
         position: relative;
         overflow: hidden;
@@ -127,50 +185,109 @@ $tablet-up: "only screen and (min-width: 768px)";
 
     .c-hamburger--htra {
         background-color: $mainColor;
-
-        span {
-            transition: transform 0.3s;
-        }
-
-        span::before {
-            transform-origin: top left;
-            transition: transform 0.3s, width 0.3s, top 0.3s;
-        }
-
-        span::after {
-            transform-origin: bottom left;
-            transition: transform 0.3s, width 0.3s, bottom 0.3s;
-        }
-    }
-
-    #profile {
-        display: inline-block;
-        width: 20vw;
-        img {
-            display: inline-block;
-            height: 5vw;
-            width: 5vw;
-        }
-        input {
-            outline: 0;
-            border: 0;
-        }
     }
 
     #searchBar {
-        display: inline-block;
-        width: 60vw;
+        display: block;
+        margin: 0 auto;
+        input {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+        }
+    }
+    a {
+        position: absolute;
+        left: 30px;
+        display: block;
+        @media #{$tablet-up} {
+            display: none;
+        }
+        img {
+            height: 48px;
+            width: 48px;
+        }
+    }
+
+    #burger {
+        position: absolute;
+        top: 0;
+        right: 20px;
     }
 }
 
 #leftComponents {
+    position: absolute;
+    top: 76px;
     display: none;
     @media #{$tablet-up} {
         display: block;
     }
 }
 
+#activeContent {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    float: none;
+    z-index: 12;
+    padding: 0;
+    @media #{$tablet-down} {
+        top: 96px;
+    }
+    top: 96px;
+    align-content: center;
+    justify-content: center;
+
+    #profile img {
+        display: block;
+    }
+    #profile img,
+    #profile h2, {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #messages {
+        width: 100%;
+    }
+    
+}
+
+#burgerMenu {
+    position: relative;
+    margin: 0 auto;
+    float: none;
+    z-index: 12;
+    top: -26px;
+    padding: 0;
+    width: 100%;
+    ul {
+        margin: 0 auto;
+        width: 100%;
+        li {
+            display: block;
+            width: 100%;
+            text-transform: uppercase;
+
+            .burgerClass {
+                width: 100%;
+                background-color: $mainColor;
+                padding: 30px;
+                a{
+                    display: block;
+            margin: 0 auto;
+                }
+            }
+        }
+    }
+    
+}
+
 #rightComponents {
+    position: absolute;
+    top: 76px;
+    right: 0;
     display: none;
     @media #{$tablet-up} {
         display: block;

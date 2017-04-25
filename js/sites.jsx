@@ -21,7 +21,7 @@ class Sites extends React.Component {
     render() {
         const sitesList = this.handleTheData();
         return <div id='sites'>
-            <h1>Sites</h1>
+            <h2>Sites</h2>
             <ul>
                 {sitesList}
             </ul>

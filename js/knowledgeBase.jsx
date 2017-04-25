@@ -29,7 +29,7 @@ class KnowledgeBase extends React.Component {
     render() {
         const knowledge = this.handleKnowledgeData();
         return <div id='knowledgeBase'>
-            <h3>Knowledge Base</h3>
+            <h2>Knowledge Base</h2>
             <ul>
                 {knowledge}
             </ul>

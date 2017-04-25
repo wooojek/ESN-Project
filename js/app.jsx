@@ -6,8 +6,6 @@ import { Router,
     IndexRoute,
     hashHistory } from 'react-router';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 require('../sass/style.scss');
 
 import Template from './template.jsx';
@@ -30,8 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     class App extends React.Component {
         render() {
-            return <MuiThemeProvider>
-                    <Router history={hashHistory}>
+            return <Router history={hashHistory}>
                         <Route path='/' component={Template}>
                         <IndexRoute component={NewsFeed} />
                         <Route path='/profile' component={Profile} />
@@ -46,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         <Route path='*' component={NotFound} />
                         </Route>
                     </Router>
-                </MuiThemeProvider>
         }
     }
 
