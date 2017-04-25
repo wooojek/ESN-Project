@@ -45,7 +45,7 @@ class Groups extends React.Component {
 
     render() {
         const elements = this.state.data.map(element => {
-            return <GroupElement elementData={element} />;
+            return <GroupElement key={element._id} elementData={element} />;
         });
         return <div id='groups'>
             <h2>Groups</h2>

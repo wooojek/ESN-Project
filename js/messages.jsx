@@ -62,7 +62,7 @@ class Messages extends React.Component {
 
     render() {
         const messages = this.state.data.map(element => {
-            return <MessagesItem elementData={element} />;
+            return <MessagesItem key={element._id} elementData={element} />;
         });
 
         return <div id='messages'>
