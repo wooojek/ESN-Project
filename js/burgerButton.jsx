@@ -2,13 +2,6 @@ import React from 'react';
 import {hashHistory} from 'react-router'
 
 import BurgerMenu from './burgerMenu.jsx';
-// import Messages from './messages.jsx';
-// import NewsFeed from './newsFeed.jsx';
-// import Groups from './groups.jsx';
-// import KnowledgeBase from './knowledgeBase.jsx';
-// import Sites from './sites.jsx';
-// import ToDoList from './toDoList.jsx';
-// import Files from './files.jsx';
 
 
 class BurgerButton extends React.Component {
