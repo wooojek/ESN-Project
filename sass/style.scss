@@ -33,6 +33,11 @@ $tablet-down: "only screen and (max-width: 768px)";
         color: black;
     }
 }
+
+body {
+    margin: 0;
+}
+
 .centered {
     text-align: center;
 }
