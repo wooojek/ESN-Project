@@ -1,4 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import store from '../store.jsx';
+import * as actions from '../actions';
 
 import newsData from '../data/newsFeed.js';
 
@@ -49,13 +53,24 @@ class NewsFeedItem extends React.Component {
     }
 }
 
+@connect((store) => {
+    return {
+        data: store.data,
+    };
+}, actions)
 class NewsFeed extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             news: newsData.news,
+            fetching: this.props.fetching,
         }
+    }
+    componentDidMount() {
+        this.setState({
+            sitesListData: this.props.data.data.news,
+        });
     }
 
     render() {
@@ -63,7 +78,7 @@ class NewsFeed extends React.Component {
             return <NewsFeedItem key={element._id} data={element}/>
         });
 
-        return <div id='newsFeed'>
+        return (this.state.fetching) ? null : <div id='newsFeed'>
             <h2>NewsFeed</h2>
             <ul>
                 {news}

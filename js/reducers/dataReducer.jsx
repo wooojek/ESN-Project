@@ -1,7 +1,13 @@
-const dataReducer = (state={}, action) => {
+const initialState = {
+    fetching: false,
+    fetched: false,
+    data: [],
+}
+
+const dataReducer = (state=initialState, action) => {
     switch (action.type) {
         case 'FETCH_DATA': {
-            state = {...state, data: action.payload};
+            state = {...state, data: action.payload };
             break;
         }
         case 'FETCH_DATA_NEWS': {
