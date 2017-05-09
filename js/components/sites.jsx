@@ -1,6 +1,6 @@
 import React from 'react';
 
-import data from './data/sites.js';
+import data from '../data/sites.js';
 
 class Sites extends React.Component {
     constructor(props) {

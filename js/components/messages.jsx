@@ -1,6 +1,6 @@
 import React from 'react';
 
-import messagesData from './data/messages.js';
+import messagesData from '../data/messages.js';
 
 class MessagesItem extends React.Component {
     constructor(props) {

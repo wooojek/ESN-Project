@@ -1,6 +1,6 @@
 import React from 'react';
 
-import dataToDoList from './data/toDoList.js';
+import dataToDoList from '../data/toDoList.js';
 
 let data = dataToDoList.toDo;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import dataFiles from './data/files.js';
+import dataFiles from '../data/files.js';
 
 class Files extends React.Component {
     constructor(props) {

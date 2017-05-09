@@ -1,6 +1,6 @@
 import React from 'react';
 
-import knowledgeBaseData from './data/knowledgeBase.js';
+import knowledgeBaseData from '../data/knowledgeBase.js';
 
 class KnowledgeBase extends React.Component {
     constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import profileData from './data/profile.js';
+import profileData from '../data/profile.js';
 
 class Profile extends React.Component {
     constructor(props) {

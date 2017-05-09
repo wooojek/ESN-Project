@@ -8,21 +8,21 @@ import { Router,
 
 require('../sass/style.scss');
 
-import Template from './template.jsx';
+import Template from './components/template.jsx';
 
-import Profile from './profile.jsx';
-import SearchBar from './searchBar.jsx';
-import BurgerButton from './burgerButton.jsx';
-import BurgerMenu from './burgerMenu.jsx';
-import Menu from './menu.jsx';
-import Messages from './messages.jsx';
-import NewsFeed from './newsFeed.jsx';
-import Groups from './groups.jsx';
-import KnowledgeBase from './knowledgeBase.jsx';
-import Sites from './sites.jsx';
-import ToDoList from './toDoList.jsx';
-import Files from './files.jsx';
-import NotFound from './notFound.jsx';
+import Profile from './components/profile.jsx';
+import SearchBar from './components/searchBar.jsx';
+import BurgerButton from './components/burgerButton.jsx';
+import BurgerMenu from './components/burgerMenu.jsx';
+import Menu from './components/menu.jsx';
+import Messages from './components/messages.jsx';
+import NewsFeed from './components/newsFeed.jsx';
+import Groups from './components/groups.jsx';
+import KnowledgeBase from './components/knowledgeBase.jsx';
+import Sites from './components/sites.jsx';
+import ToDoList from './components/toDoList.jsx';
+import Files from './components/files.jsx';
+import NotFound from './components/notFound.jsx';
 
 document.addEventListener('DOMContentLoaded', function () {
 

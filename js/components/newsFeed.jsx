@@ -1,6 +1,6 @@
 import React from 'react';
 
-import newsData from './data/newsFeed.js';
+import newsData from '../data/newsFeed.js';
 
 class NewsFeedItem extends React.Component {
     constructor(props) {

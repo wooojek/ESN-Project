@@ -1,5 +1,5 @@
 import React from 'react';
-import groupsData from './data/groups.js'
+import groupsData from '../data/groups.js'
 
 class GroupElement extends React.Component {
     constructor(props) {

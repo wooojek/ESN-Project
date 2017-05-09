@@ -1,7 +1,7 @@
 import React from 'react';
 import {IndexLink,} from 'react-router';
 
-import profileData from './data/profile.js';
+import profileData from '../data/profile.js';
 
 class ProfilePic extends React.Component {
     constructor(props) {
