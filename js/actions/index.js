@@ -1,16 +1,16 @@
 import * as firebase from 'firebase';
 
 const config = {
-    apiKey: "AIzaSyC7TXXwpb4NtOETZZiei4KDAn2rTUbPSQ8",
-    authDomain: "redux-training-4e795.firebaseapp.com",
-    databaseURL: "https://redux-training-4e795.firebaseio.com",
-    projectId: "redux-training-4e795",
-    storageBucket: "redux-training-4e795.appspot.com",
-    messagingSenderId: "743040885817"
+    apiKey: "AIzaSyCY4e40sSMHKqeMWVaj37p8DNoMef_DBIs",
+    authDomain: "react-esn-project.firebaseapp.com",
+    databaseURL: "https://react-esn-project.firebaseio.com",
+    projectId: "react-esn-project",
+    storageBucket: "react-esn-project.appspot.com",
+    messagingSenderId: "818544713250"
   };
 firebase.initializeApp(config);
 
-const Data = firebase.database().ref().child('name');
+const Data = firebase.database().ref().child('data');
 
 export function fetchData() {
   return dispatch => {

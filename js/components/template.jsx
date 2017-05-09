@@ -1,5 +1,6 @@
 import React from 'react';
 import {IndexLink,} from 'react-router';
+import { connect } from 'react-redux';
 
 import Profile from './profile.jsx';
 import ProfilePic from './profilePic.jsx';
@@ -18,13 +19,24 @@ import Files from './files.jsx';
 
 import NotFound from './notFound.jsx';
 
-class Template extends React.Component {
-    constructor(props) {
-        super(props);
+import store from '../store.jsx';
+import * as actions from '../actions';
 
-        this.state = {
-            data: [],
-        }
+
+store.subscribe(() => {
+    console.log("store changed", store.getState());
+});
+
+@connect((store) => {
+    return {
+        user: store.user,
+        data: store.data,
+    };
+}, actions)
+class Template extends React.Component {
+
+    componentWillMount() {
+        this.props.fetchData();
     }
 
     render() {

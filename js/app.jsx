@@ -27,10 +27,6 @@ import ToDoList from './components/toDoList.jsx';
 import Files from './components/files.jsx';
 import NotFound from './components/notFound.jsx';
 
-store.subscribe(() => {
-    console.log("store changed", store.getState());
-});
-
 document.addEventListener('DOMContentLoaded', function () {
 
     class App extends React.Component {
