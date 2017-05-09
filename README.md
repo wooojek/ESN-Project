@@ -7,3 +7,4 @@ Connected firebase to the project and I'm using redux to have "one source of tru
 Database is created and can be found in main folder ("database.json"), exactly same json file is hosted on firebase from where data is provided to the store
 
 Still styling has to be done.
+GitHub Pages not working properly...
