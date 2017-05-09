@@ -29,7 +29,6 @@ store.subscribe(() => {
 
 @connect((store) => {
     return {
-        user: store.user,
         data: store.data,
     };
 }, actions)
