@@ -16,18 +16,8 @@ const DataGroups = Data.child('groups');
 const DataKnowledge = Data.child('knowledge');
 const DataSites = Data.child('sites');
 
-export function fetchData() {
-  return dispatch => {
-    Data.once('value').then(snapshot => {
-      dispatch({
-        type: 'FETCH_DATA',
-        payload: snapshot.val(),
-      });
-    })
-  };
-}
 
-export function fetchDataAgain() {
+export function fetchData() {
   return dispatch => {
     Data.on('value', snapshot => {
       dispatch({
