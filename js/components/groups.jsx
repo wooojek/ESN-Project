@@ -1,5 +1,8 @@
 import React from 'react';
 import groupsData from '../data/groups.js'
+import { connect } from 'react-redux';
+import store from '../store.jsx';
+import * as actions from '../actions';
 
 class GroupElement extends React.Component {
     constructor(props) {
@@ -28,18 +31,15 @@ class GroupElement extends React.Component {
     }
 }
 
+@connect((store) => {
+    return {
+        data: store.data,
+    };
+}, actions)
 class Groups extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            data: [],
-        }
-    }
-
-    componentDidMount() {
+    componentWillMount() {
         this.setState({
-            data: groupsData.data,
+            data: this.props.data.data.groups,
         });
     }
 
