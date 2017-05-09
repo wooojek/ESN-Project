@@ -3,7 +3,7 @@ Enterprise Social Networking Project
 
 My idea is to make simple ESN site, which contains the core functions that real ESN software has.
 
-Now, I'm having issues with handling the data through the react router, so I'm learning REDUX.
-    For now I made simple exporting from .js files to just simulate real database and data handling.
+Connected firebase to the project and I'm using redux to have "one source of truth".
+Databse needs to be created and handling the data from store have to be made.
 
 Still styling has to be done.
