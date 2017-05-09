@@ -1,5 +1,4 @@
 # ESN-Project
-## Github Pages: https://wooojek.github.io/ESN-Project/
 Enterprise Social Networking Project
 
 My idea is to make simple ESN site, which contains the core functions that real ESN software has.
