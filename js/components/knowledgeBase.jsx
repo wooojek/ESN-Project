@@ -1,14 +1,21 @@
 import React from 'react';
 
-import knowledgeBaseData from '../data/knowledgeBase.js';
+import { connect } from 'react-redux';
 
+import store from '../store.jsx';
+import * as actions from '../actions';
+
+@connect((store) => {
+    return {
+        data: store.data,
+    };
+}, actions)
 class KnowledgeBase extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            knowledgeData: knowledgeBaseData.knowledgeBase,
-        }
+    componentWillMount() {
+        this.setState({
+            knowledgeData: this.props.data.data.knowledge,
+        });
     }
 
     handleKnowledgeData = () => {
