@@ -5,6 +5,9 @@ import { Router,
     Link,
     IndexRoute,
     hashHistory } from 'react-router';
+import { Provider } from 'react-redux';
+
+import store from './store.jsx';
 
 require('../sass/style.scss');
 
@@ -23,6 +26,10 @@ import Sites from './components/sites.jsx';
 import ToDoList from './components/toDoList.jsx';
 import Files from './components/files.jsx';
 import NotFound from './components/notFound.jsx';
+
+store.subscribe(() => {
+    console.log("store changed", store.getState());
+});
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -47,7 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     ReactDOM.render(
-        <App />,
+        <Provider store={store}>
+            <App />
+        </Provider>,
         document.getElementById('app')
     );
 
