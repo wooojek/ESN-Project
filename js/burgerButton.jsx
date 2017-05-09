@@ -20,8 +20,7 @@ class BurgerButton extends React.Component {
 
     render () {
         return <div id="burger">
-                <button id="burgerButton" className="c-hamburger c-hamburger--htra" onClick={event => this.handleBurgerClick(event)}> 
-                {/*based on: http://callmenick.com/post/animating-css-only-hamburger-menu-icons*/}
+                <button id="burgerButton" className="c-hamburger c-hamburger--htra" onClick={event => this.handleBurgerClick(event)}>
                     <span></span>
                 </button>
             </div>

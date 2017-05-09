@@ -34,7 +34,6 @@ class ToDoItem extends React.Component {
             <img src={taskState}/>
             <span>{this.props.itemTitle}</span>
             <button onClick={this.handleRemoveClick}>Usuń</button>
-            {/*<button onClick={this.handleDoneClick}>Zakończ</button>*/}
             {buttonUpdate}
         </li>;
     }
