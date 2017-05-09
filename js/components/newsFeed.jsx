@@ -68,7 +68,7 @@ class NewsFeed extends React.Component {
         }
     }
     componentWillMount() {
-        const timeout = setTimeout(() => {
+        this.timeout = setTimeout(() => {
             this.setState({
             news: this.props.data.data.news,
             fetching: this.props.fetching,
@@ -76,7 +76,7 @@ class NewsFeed extends React.Component {
         }, 1000);
     }
     componentWillUnmount() {
-        clearTimeout(timeout);
+        clearTimeout(this.timeout);
     }
 
     render() {
