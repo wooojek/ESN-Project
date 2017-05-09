@@ -11,12 +11,60 @@ const config = {
 firebase.initializeApp(config);
 
 const Data = firebase.database().ref().child('data');
+const DataNews = Data.child('news');
+const DataGroups = Data.child('groups');
+const DataKnowledge = Data.child('knowledge');
+const DataSites = Data.child('sites');
 
 export function fetchData() {
   return dispatch => {
     Data.on('value', snapshot => {
       dispatch({
         type: 'FETCH_DATA',
+        payload: snapshot.val(),
+      });
+    });
+  };
+}
+
+export function fetchDataNews() {
+  return dispatch => {
+    DataNews.on('value', snapshot => {
+      dispatch({
+        type: 'FETCH_DATA_NEWS',
+        payload: snapshot.val(),
+      });
+    });
+  };
+}
+
+export function fetchDataGroups() {
+  return dispatch => {
+    DataGroups.on('value', snapshot => {
+      dispatch({
+        type: 'FETCH_DATA_GROUPS',
+        payload: snapshot.val(),
+      });
+    });
+  };
+}
+
+export function fetchDataKnowledge() {
+  return dispatch => {
+    DataKnowledge.on('value', snapshot => {
+      dispatch({
+        type: 'FETCH_DATA_KNOWLEDGE',
+        payload: snapshot.val(),
+      });
+    });
+  };
+}
+
+export function fetchDataSites() {
+  return dispatch => {
+    DataSites.on('value', snapshot => {
+      dispatch({
+        type: 'FETCH_DATA_SITES',
         payload: snapshot.val(),
       });
     });

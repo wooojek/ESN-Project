@@ -1,6 +1,9 @@
 import React from 'react';
 import {IndexLink,} from 'react-router';
+
 import { connect } from 'react-redux';
+import store from '../store.jsx';
+import * as actions from '../actions';
 
 import Profile from './profile.jsx';
 import ProfilePic from './profilePic.jsx';
@@ -19,18 +22,9 @@ import Files from './files.jsx';
 
 import NotFound from './notFound.jsx';
 
-import store from '../store.jsx';
-import * as actions from '../actions';
-
-
-store.subscribe(() => {
-    console.log("store changed", store.getState());
-});
 
 @connect((store) => {
-    return {
-        data: store.data,
-    };
+    return store;
 }, actions)
 class Template extends React.Component {
 

@@ -1,14 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import data from '../data/sites.js';
+import store from '../store.jsx';
+import * as actions from '../actions';
 
+@connect((store) => {
+    return {
+        data: store.data,
+    };
+}, actions)
 class Sites extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            sitesListData: data.sites,
-        }
+    componentWillMount() {
+        this.setState({
+            sitesListData: this.props.data.data.sites,
+        });
     }
 
     handleTheData = () => {
