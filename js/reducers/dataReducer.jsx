@@ -1,5 +1,5 @@
 const initialState = {
-    fetching: false,
+    fetching: true,
     fetched: false,
     data: [],
 }
@@ -7,7 +7,7 @@ const initialState = {
 const dataReducer = (state=initialState, action) => {
     switch (action.type) {
         case 'FETCH_DATA': {
-            state = {...state, data: action.payload };
+            state = {...state, data: action.payload, fetching: false };
             break;
         }
         case 'FETCH_DATA_NEWS': {
