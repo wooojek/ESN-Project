@@ -5,7 +5,8 @@ const initialState = {
 const dataReducer = (state=initialState, action) => {
     switch (action.type) {
         case 'FETCH_DATA': {
-            state = {...state, data: action.payload, fetching: false };
+            let userId = Math.floor((Math.random()*3));
+            state = {...state, data: action.payload.data, user: action.payload.users[userId],  fetching: false };
             break;
         }
         case 'FETCH_DATA_NEWS': {

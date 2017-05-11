@@ -10,7 +10,7 @@ const config = {
   };
 firebase.initializeApp(config);
 
-const Data = firebase.database().ref().child('data');
+const Data = firebase.database().ref();
 const DataNews = Data.child('news');
 const DataGroups = Data.child('groups');
 const DataKnowledge = Data.child('knowledge');
