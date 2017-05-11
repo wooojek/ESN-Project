@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import dataToDoList from '../data/toDoList.js';
 
@@ -39,6 +40,9 @@ class ToDoItem extends React.Component {
     }
 }
 
+@connect(store => {
+    return store;
+})
 class ToDoList extends React.Component {
     constructor(props) {
         super(props);
@@ -110,15 +114,21 @@ class ToDoList extends React.Component {
         });
     }
 
-
-    render() {
+    fillToDoList = () => {
         const toDoItems = this.state.items.map(element => {
             return <ToDoItem key={element._id} itemKey={element._id} itemTitle={element.name} itemState={element.state} onRemove={this.handleItemOnRemove} onUpdate={this.handleUpdateItem}/>;
         });
+
+        return toDoItems;
+    }
+
+
+    render() {
+        
         return <div id='toDoList'>
             <h2>ToDoList</h2>
             <ul>
-                {toDoItems}
+                {this.props.fetching ? null : this.fillToDoList()}
             </ul>
                 <input type="text" ref={input => this.nameInput = input} value={this.state.newItem} onChange={this.handleNewItemChange} placeholder="Dodaj zadanie..."/>
                 <button onClick={this.handleItemOnAdd}><img src='./img/ic_playlist_add_black_24px.svg'/></button>
