@@ -1,18 +1,13 @@
 import React from 'react';
 import {IndexLink,} from 'react-router';
+import { connect } from 'react-redux';
 
 import profileData from '../data/profile.js';
 
+@connect(store => store)
 class ProfilePic extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            imageSrc: 'obrazek',
-        }
-    }
-
-    componentDidMount() {
+    componentWillMount() {
         this.setState({
             imageSrc: profileData.data,
         });
@@ -20,7 +15,7 @@ class ProfilePic extends React.Component {
 
     render() {
         return <div>
-                <IndexLink to="/profile"><img src={this.state.imageSrc.picture}/></IndexLink>
+                <IndexLink to="/profile"><img src={this.props.fetching ? this.state.imageSrc.picture : this.props.user.picture}/></IndexLink>
             </div>;
     }
 }
