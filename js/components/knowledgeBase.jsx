@@ -5,21 +5,11 @@ import { connect } from 'react-redux';
 import store from '../store.jsx';
 import * as actions from '../actions';
 
-@connect((store) => {
-    return {
-        data: store.data,
-    };
-}, actions)
+@connect((store) => store)
 class KnowledgeBase extends React.Component {
 
-    componentWillMount() {
-        this.setState({
-            knowledgeData: this.props.data.knowledge,
-        });
-    }
-
     handleKnowledgeData = () => {
-        const data = this.state.knowledgeData.map(element => {
+        const data = this.props.data.knowledge.map(element => {
             return <li key={element._id}>
                 <h3>{element.name.first} {element.name.last}</h3>
                 <h4>{element.company}</h4>
@@ -34,11 +24,10 @@ class KnowledgeBase extends React.Component {
     }
 
     render() {
-        const knowledge = this.handleKnowledgeData();
         return <div id='knowledgeBase'>
             <h2>Knowledge Base</h2>
             <ul>
-                {knowledge}
+                {this.handleKnowledgeData()}
             </ul>
         </div>;
     }
