@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 
 import store from './store.jsx';
 
-require('../sass/style.scss');
+// require('../sass/style.scss');
 
 import Template from './components/template.jsx';
 

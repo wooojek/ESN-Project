@@ -241,9 +241,9 @@ body {
     z-index: 12;
     padding: 0;
     @media #{$tablet-down} {
-        top: 96px;
+        top: 105px;
     }
-    top: 96px;
+    top: 105px;
     align-content: center;
     justify-content: center;
 
@@ -252,6 +252,12 @@ body {
     }
     #profile img,
     #profile h2, {
+        padding: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+    h2 {
+        padding-top: 20px;
         text-align: center;
         margin: 0 auto;
     }
