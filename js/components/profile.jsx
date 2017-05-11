@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import profileData from '../data/profile.js';
 
+@connect( store => store.user )
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -25,18 +27,18 @@ class Profile extends React.Component {
 
         if(stateSubmit === 'Edytuj') {
             stateSubmit = 'Zatwierdź';
-            event.target.imageSrc.classList.remove('display');
+            event.target.picture.classList.remove('display');
         } else if (stateSubmit === 'Zatwierdź') {
             stateSubmit = 'Edytuj';
-            event.target.imageSrc.classList.add('display');            
+            event.target.picture.classList.add('display');            
         }
 
         this.setState({
                 firstName: event.target.firstName.value,
                 lastName: event.target.lastName.value,
-                imageSrc: event.target.imageSrc.value,
-                proffesion: event.target.proffesion.value,
-                description: event.target.description.value,
+                imageSrc: event.target.picture.value,
+                proffesion: event.target.company.value,
+                description: event.target.about.value,
                 submit: stateSubmit,
         });
     }
@@ -58,20 +60,20 @@ class Profile extends React.Component {
         }
 
         return <div id="profile">
-                <img src={this.state.imageSrc}/>
+                <img src={this.props.picture}/>
                 <h2>Profil</h2>
                 <form className="profileForm centered" onSubmit={event => this.handleEdit(event)}>
                     <input type='submit' value={this.state.submit}/>
                     <label>Link do zdjęcia:</label>
-                    <input type='text' name='imageSrc' value={this.state.imageSrc} onChange={this.handleChange} className="display" {...opts}/>
+                    <input type='text' name='picture' value={this.props.picture} onChange={this.handleChange} className="display" {...opts}/>
                     <label>Imię:</label>
-                    <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}{...opts}/>
+                    <input type='text' name='firstName' value={this.props.name.first} onChange={this.handleChange}{...opts}/>
                     <label>Nazwisko:</label>
-                    <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange} {...opts}/>
+                    <input type='text' name='lastName' value={this.props.name.last} onChange={this.handleChange} {...opts}/>
                     <label>Zawód:</label>
-                    <input type='text' name='proffesion' value={this.state.proffesion} onChange={this.handleChange} {...opts}/>
+                    <input type='text' name='company' value={this.props.company} onChange={this.handleChange} {...opts}/>
                     <label>Bio:</label>
-                    <input type='text' name='description' value={this.state.description} onChange={this.handleChange} {...opts}/>
+                    <input type='text' name='about' value={this.props.about} onChange={this.handleChange} {...opts}/>
                 </form>
             </div>;
     }
