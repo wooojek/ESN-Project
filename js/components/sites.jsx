@@ -13,7 +13,7 @@ class Sites extends React.Component {
 
     componentWillMount() {
         this.setState({
-            sitesListData: this.props.data.data.sites,
+            sitesListData: this.props.data.sites,
         });
     }
 

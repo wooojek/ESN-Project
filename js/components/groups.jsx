@@ -39,7 +39,7 @@ class GroupElement extends React.Component {
 class Groups extends React.Component {
     componentWillMount() {
         this.setState({
-            data: this.props.data.data.groups,
+            data: this.props.data.groups,
         });
     }
 

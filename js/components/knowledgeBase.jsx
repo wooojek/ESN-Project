@@ -14,7 +14,7 @@ class KnowledgeBase extends React.Component {
 
     componentWillMount() {
         this.setState({
-            knowledgeData: this.props.data.data.knowledge,
+            knowledgeData: this.props.data.knowledge,
         });
     }
 

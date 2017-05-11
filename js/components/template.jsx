@@ -27,7 +27,6 @@ import NotFound from './notFound.jsx';
     return store;
 }, actions)
 class Template extends React.Component {
-
     componentWillMount() {
         this.props.fetchData();
     }
@@ -57,7 +56,7 @@ class Template extends React.Component {
                 </div>
                 <section className="row">
                     <section id="activeContent" className="col-6">
-                        {this.props.children}
+                        {this.props.fetching ? <h1>Loading...</h1> : this.props.children}
                     </section>
                 </section>
             </div>;

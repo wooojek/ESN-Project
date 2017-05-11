@@ -54,29 +54,14 @@ class NewsFeedItem extends React.Component {
 }
 
 @connect((store) => {
-    return {
-        data: store.data,
-    };
+    return store;
 }, actions)
 class NewsFeed extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            news: [],
-            fetching: true,
-        }
-    }
     componentWillMount() {
-        this.timeout = setTimeout(() => {
-            this.setState({
-            news: this.props.data.data.news,
-            fetching: this.props.fetching,
+        this.setState({
+            news: this.props.data.news,
         });
-        }, 1000);
-    }
-    componentWillUnmount() {
-        clearTimeout(this.timeout);
     }
 
     render() {
@@ -84,7 +69,7 @@ class NewsFeed extends React.Component {
             return <NewsFeedItem key={element._id} data={element}/>
         });
 
-        return (this.state.fetching) ? <h1>Loading...</h1> : <div id='newsFeed'>
+        return <div id='newsFeed'>
             <h2>NewsFeed</h2>
             <ul>
                 {news}

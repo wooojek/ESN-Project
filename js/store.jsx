@@ -5,8 +5,12 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import error from './middlewares/error.jsx';
 
-import reducers from './reducers/combinedReducers.jsx';
+import dataReducer from './reducers/dataReducer.jsx';
 
 const middleware = applyMiddleware(promise(), thunk, logger, error);
 
-export default createStore(reducers, middleware);
+const initialState = {
+    fetching: true,
+}
+
+export default createStore(dataReducer, initialState, middleware);

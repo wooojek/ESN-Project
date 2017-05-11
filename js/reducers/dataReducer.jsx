@@ -1,7 +1,5 @@
 const initialState = {
     fetching: true,
-    fetched: false,
-    data: [],
 }
 
 const dataReducer = (state=initialState, action) => {
