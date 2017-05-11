@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import messagesData from '../data/messages.js';
 
@@ -45,23 +46,11 @@ class MessagesItem extends React.Component {
     }
 }
 
+@connect( store => store)
 class Messages extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            data: [],
-        }
-    }
-
-    componentDidMount() {
-        this.setState({
-            data: messagesData.data,
-        });
-    }
-
+    
     render() {
-        const messages = this.state.data.map(element => {
+        const messages = this.props.user.messages.map(element => {
             return <MessagesItem key={element._id} elementData={element} />;
         });
 
