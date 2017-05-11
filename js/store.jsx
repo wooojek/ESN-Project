@@ -11,6 +11,8 @@ const middleware = applyMiddleware(promise(), thunk, logger, error);
 
 const initialState = {
     fetching: true,
+    data: {},
+    user: {},
 }
 
 export default createStore(dataReducer, initialState, middleware);

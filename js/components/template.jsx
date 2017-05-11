@@ -27,6 +27,7 @@ import NotFound from './notFound.jsx';
     return store;
 }, actions)
 class Template extends React.Component {
+    
     componentWillMount() {
         this.props.fetchData();
     }

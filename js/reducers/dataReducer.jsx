@@ -1,5 +1,7 @@
 const initialState = {
     fetching: true,
+    data: {},
+    user: {},
 }
 
 const dataReducer = (state=initialState, action) => {

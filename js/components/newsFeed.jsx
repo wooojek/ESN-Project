@@ -55,7 +55,7 @@ class NewsFeedItem extends React.Component {
 
 @connect((store) => {
     return store;
-}, actions)
+})
 class NewsFeed extends React.Component {
 
     componentWillMount() {

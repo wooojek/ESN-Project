@@ -1,18 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import dataFiles from '../data/files.js';
 
+@connect(store => {
+    return store;
+})
 class Files extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            dataFiles: dataFiles.files,
-        }
+    componentWillMount() {
+        this.setState({
+            files: this.props.user.files,
+        });
     }
 
     handleFilesData = () => {
-        const filesData = this.state.dataFiles.map(element => {
+        const filesData = this.props.user.files.map(element => {
             return <li key={element._id}><img src={element.picture}/><a href={element.url} target="_blank">{element.company}.xlsx</a></li>;
         });
 
@@ -20,11 +23,12 @@ class Files extends React.Component {
     }
 
     render() {
-        const filesList = this.handleFilesData();
+        
+        console.log(this.props);
         return <div id='files'>
             <h2>Files</h2>
             <ul>
-                {filesList}
+                {this.props.fetching ? null : this.handleFilesData()}
             </ul>
         </div>;
     }
