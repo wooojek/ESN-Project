@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import { userId } from '../reducers/dataReducer.jsx';
 
 const config = {
     apiKey: "AIzaSyCY4e40sSMHKqeMWVaj37p8DNoMef_DBIs",
@@ -15,6 +16,7 @@ const DataNews = Data.child('news');
 const DataGroups = Data.child('groups');
 const DataKnowledge = Data.child('knowledge');
 const DataSites = Data.child('sites');
+const UserData = Data.child('users').child(userId);
 
 
 export function fetchData() {
@@ -26,4 +28,12 @@ export function fetchData() {
       });
     });
   };
+}
+
+export function updateUserData(data) {
+  return dispatch => {
+    console.log(data);
+
+    firebase.database().ref('/users/' + userId + '/').set(data);
+  }
 }

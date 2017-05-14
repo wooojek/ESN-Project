@@ -4,10 +4,12 @@ const initialState = {
     user: {},
 }
 
-const dataReducer = (state=initialState, action) => {
+
+export const userId = 0;
+
+export const dataReducer = (state=initialState, action) => {
     switch (action.type) {
         case 'FETCH_DATA': {
-            let userId = Math.floor((Math.random()*3));
             state = {...state, data: action.payload.data, user: action.payload.users[userId],  fetching: false };
             break;
         }

@@ -1,19 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import profileData from '../data/profile.js';
 
-@connect( store => store.user )
+@connect( store => store.user, actions )
 class Profile extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            firstName: 'Jan',
-            lastName: 'Nowak',
-            imageSrc: './img/ic_account_circle_black_48px.svg',
-            proffesion: 'CEO',
-            description: 'lorem ipsum dolor',
+            ...this.props,
+            name: {
+                last: this.props.name.last,
+                first: this.props.name.first,
+            },
+            picture: this.props.picture,
+            company: this.props.company,
+            about: this.props.about,
             submit: 'Edytuj',
             display: true,
         }
@@ -21,7 +25,6 @@ class Profile extends React.Component {
 
     handleEdit = (event) => {
         event.preventDefault();
-
         let stateSubmit = this.state.submit;
         let stateImageSrc = this.state.imageSrc;
 
@@ -34,12 +37,33 @@ class Profile extends React.Component {
         }
 
         this.setState({
-                firstName: event.target.firstName.value,
-                lastName: event.target.lastName.value,
-                imageSrc: event.target.picture.value,
-                proffesion: event.target.company.value,
-                description: event.target.about.value,
+                name: {
+                    first: event.target.first.value,
+                    last: event.target.last.value,
+                },
+                picture: event.target.picture.value,
+                company: event.target.company.value,
+                about: event.target.about.value,
                 submit: stateSubmit,
+        });
+        this.props.updateUserData(this.state);
+    }
+
+    handleFirstNameChange = (event) => {
+        this.setState({
+            name:{
+                ...this.props.name,
+                first: event.target.value,
+            }
+        });
+    }
+
+    handleLastNameChange = (event) => {
+        this.setState({
+            name:{
+                ...this.props.name,
+                last: event.target.value,
+            }
         });
     }
 
@@ -60,20 +84,20 @@ class Profile extends React.Component {
         }
 
         return <div id="profile">
-                <img src={this.props.picture}/>
+                <img src={this.state.picture}/>
                 <h2>Profil</h2>
                 <form className="profileForm centered" onSubmit={event => this.handleEdit(event)}>
                     <input type='submit' value={this.state.submit}/>
                     <label>Link do zdjęcia:</label>
-                    <input type='text' name='picture' value={this.props.picture} onChange={this.handleChange} className="display" {...opts}/>
+                    <input type='text' name='picture' value={this.state.picture} onChange={this.handleChange} className="display" {...opts}/>
                     <label>Imię:</label>
-                    <input type='text' name='firstName' value={this.props.name.first} onChange={this.handleChange}{...opts}/>
+                    <input type='text' name='first' value={this.state.name.first} onChange={this.handleFirstNameChange}{...opts}/>
                     <label>Nazwisko:</label>
-                    <input type='text' name='lastName' value={this.props.name.last} onChange={this.handleChange} {...opts}/>
+                    <input type='text' name='last' value={this.state.name.last} onChange={this.handleLastNameChange} {...opts}/>
                     <label>Zawód:</label>
-                    <input type='text' name='company' value={this.props.company} onChange={this.handleChange} {...opts}/>
+                    <input type='text' name='company' value={this.state.company} onChange={this.handleChange} {...opts}/>
                     <label>Bio:</label>
-                    <input type='text' name='about' value={this.props.about} onChange={this.handleChange} {...opts}/>
+                    <input type='text' name='about' value={this.state.about} onChange={this.handleChange} {...opts}/>
                 </form>
             </div>;
     }
