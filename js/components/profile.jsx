@@ -10,7 +10,6 @@ class Profile extends React.Component {
         super(props);
 
         this.state = {
-            ...this.props,
             name: {
                 last: this.props.name.last,
                 first: this.props.name.first,
@@ -27,12 +26,14 @@ class Profile extends React.Component {
         event.preventDefault();
         let stateSubmit = this.state.submit;
         let stateImageSrc = this.state.imageSrc;
+        let flag = false;
 
         if(stateSubmit === 'Edytuj') {
             stateSubmit = 'Zatwierdź';
             event.target.picture.classList.remove('display');
         } else if (stateSubmit === 'Zatwierdź') {
             stateSubmit = 'Edytuj';
+            flag = true;
             event.target.picture.classList.add('display');            
         }
 
@@ -46,22 +47,25 @@ class Profile extends React.Component {
                 about: event.target.about.value,
                 submit: stateSubmit,
         });
-        this.props.updateUserData(this.state);
+
+        flag ? this.props.updateUserData(this.state) : null;
     }
 
     handleFirstNameChange = (event) => {
+        const last = this.state.name.last;
         this.setState({
             name:{
-                ...this.props.name,
                 first: event.target.value,
+                last: last,
             }
         });
     }
 
     handleLastNameChange = (event) => {
+        const first = this.state.name.first;
         this.setState({
             name:{
-                ...this.props.name,
+                first: first,
                 last: event.target.value,
             }
         });

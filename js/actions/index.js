@@ -32,8 +32,6 @@ export function fetchData() {
 
 export function updateUserData(data) {
   return dispatch => {
-    console.log(data);
-
-    firebase.database().ref('/users/' + userId + '/').set(data);
+    return Data.child('users').child(userId).update(data);
   }
 }
