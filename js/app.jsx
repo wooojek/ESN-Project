@@ -14,7 +14,6 @@ import store from './store.jsx';
 import Template from './components/template.jsx';
 
 import Profile from './components/profile.jsx';
-import SearchBar from './components/searchBar.jsx';
 import BurgerButton from './components/burgerButton.jsx';
 import BurgerMenu from './components/burgerMenu.jsx';
 import Menu from './components/menu.jsx';

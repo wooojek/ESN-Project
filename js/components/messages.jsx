@@ -55,7 +55,7 @@ class Messages extends React.Component {
         });
 
         return <div id='messages'>
-            <h2>Messages</h2>
+            <h2>Wiadomości</h2>
             <ul>
                 {messages}
             </ul>

@@ -48,7 +48,7 @@ class Groups extends React.Component {
             return <GroupElement key={element._id} elementData={element} />;
         });
         return <div id='groups'>
-            <h2>Groups</h2>
+            <h2>Grupy</h2>
             <ul>
                 {elements}
             </ul>

@@ -24,7 +24,7 @@ class Files extends React.Component {
 
     render() {
         return <div id='files'>
-            <h2>Files</h2>
+            <h2>Pliki</h2>
             <ul>
                 {this.props.fetching ? null : this.handleFilesData()}
             </ul>

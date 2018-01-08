@@ -24,6 +24,7 @@ $tablet-down: "only screen and (max-width: 768px)";
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    outline: none;
     ul {
         list-style: none;
         padding: 0;
@@ -118,6 +119,12 @@ body {
     
 }
 
+button {
+    background: none;
+    border-radius: .5em;
+    margin: .5em;
+}
+
 #navigation {
     width: 100%;
     height: 96px;
@@ -189,15 +196,6 @@ body {
         background-color: $mainColor;
     }
 
-    #searchBar {
-        display: block;
-        margin: 0 auto;
-        input {
-            display: block;
-            margin: 0 auto;
-            width: 50%;
-        }
-    }
     a {
         position: absolute;
         left: 30px;
@@ -219,6 +217,7 @@ body {
 }
 
 #leftComponents {
+    padding-left: 1.5em;
     position: absolute;
     top: 76px;
     display: none;
@@ -239,7 +238,7 @@ body {
     margin: 0 auto;
     float: none;
     z-index: 12;
-    padding: 0;
+    padding: 0 1.5em;
     @media #{$tablet-down} {
         top: 105px;
     }
@@ -264,6 +263,22 @@ body {
 
     #messages {
         width: 100%;
+
+        button {
+            width: 100%;
+            margin: .5em 0;
+
+            h3 {
+                position: relative;
+            }
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
     
 }
@@ -298,11 +313,74 @@ body {
 }
 
 #rightComponents {
+    padding-left: 1.5em;
     position: absolute;
     top: 76px;
     right: 0;
     display: none;
     @media #{$tablet-up} {
         display: block;
+    }
+}
+
+#knowledgeBase {
+    li {
+        border-bottom: 1px solid black;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+    h4, p {
+        padding-left: 1.5em;
+    }
+}
+
+#toDoList {
+    li {
+        padding-left: 25px;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+}
+
+#newsFeed {
+    width: 100%;
+
+    button {
+        padding-right: 25px;
+        position: relative;
+
+        img {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .newsItem {
+        margin-top: 1em;
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+}
+
+#sites {
+    a {
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: .5em;
+        padding-left: 1.5em;
     }
 }

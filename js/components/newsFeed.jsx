@@ -41,7 +41,7 @@ class NewsFeedItem extends React.Component {
                     <div>
                         <span>{this.state.element.greeting}</span>
                         <button id={this.state.element._id} onClick={event => this.handleDropClick(event)}>{this.state.element.isDropped ? 'Zwiń' : 'Rozwiń'} <img src={this.state.element.isDropped ? './img/ic_keyboard_arrow_up_black_24px.svg' : './img/ic_keyboard_arrow_down_black_24px.svg'}/></button>
-                        <div className='display'>
+                        <div className='display newsItem'>
                             <img src={this.state.element.picture}/>
                             <span><h3>{this.state.element.name.first} {this.state.element.name.last}</h3> {this.state.element.email}</span>
                             <p>
@@ -70,7 +70,7 @@ class NewsFeed extends React.Component {
         });
 
         return <div id='newsFeed'>
-            <h2>NewsFeed</h2>
+            <h2>Aktualności</h2>
             <ul>
                 {news}
             </ul>

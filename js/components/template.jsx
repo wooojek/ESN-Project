@@ -7,7 +7,6 @@ import * as actions from '../actions';
 
 import Profile from './profile.jsx';
 import ProfilePic from './profilePic.jsx';
-import SearchBar from './searchBar.jsx';
 import BurgerButton from './burgerButton.jsx';
 
 import Menu from './menu.jsx';
@@ -36,7 +35,6 @@ class Template extends React.Component {
         return <div className="container">
                 <div id="navigation" className="row col-12">
                     <ProfilePic id="navProfile" className="col-4"/>
-                    <SearchBar className="col-2"/>
                     <BurgerButton className="col-4"/>
                 </div>
                 <div className="fixed row col-12">
@@ -57,7 +55,7 @@ class Template extends React.Component {
                 </div>
                 <section className="row">
                     <section id="activeContent" className="col-6">
-                        {this.props.fetching ? <h1>Loading...</h1> : this.props.children}
+                        {this.props.fetching ? <h1>Ładowanie...</h1> : this.props.children}
                     </section>
                 </section>
             </div>;

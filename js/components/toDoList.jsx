@@ -126,7 +126,7 @@ class ToDoList extends React.Component {
     render() {
         
         return <div id='toDoList'>
-            <h2>ToDoList</h2>
+            <h2>Lista zadań</h2>
             <ul>
                 {this.props.fetching ? null : this.fillToDoList()}
             </ul>

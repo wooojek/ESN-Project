@@ -11,7 +11,7 @@ class BurgerMenu extends React.Component {
                 <li><div className="burgerClass"><IndexLink to='/groups'>Grupy</IndexLink></div></li>
                 <li><div className="burgerClass"><IndexLink to='/knowledgebase'>Baza wiedzy</IndexLink></div></li>
                 <li><div className="burgerClass"><IndexLink to='/sites'>Strony</IndexLink></div></li>
-                <li><div className="burgerClass"><IndexLink to='/todolist'>To Do list</IndexLink></div></li>
+                <li><div className="burgerClass"><IndexLink to='/todolist'>Lista zadań</IndexLink></div></li>
                 <li><div className="burgerClass"><IndexLink to='/files'>Pliki</IndexLink></div></li>
             </ul>
         </div>
